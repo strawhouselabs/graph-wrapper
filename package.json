@@ -1,0 +1,14 @@
+{
+  "name": "graph-wrapper",
+  "version": "0.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Davies <jgdavies24@gmail.com> (http://jakedavies.info)",
+  "license": "ISC",
+  "dependencies": {
+    "request-promise": "^2.0.1"
+  }
+}
