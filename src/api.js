@@ -79,7 +79,6 @@ exports.paginatedQuery = (options, currentData) => {
     return exports.paginatedQuery(options, data.concat(response.data));
   })
   .catch((err) => {
-    console.log(err);
-    return null;
+    throw err;
   });
 };
