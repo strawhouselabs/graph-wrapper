@@ -79,6 +79,13 @@ exports.paginatedQuery = (options, currentData) => {
     return exports.paginatedQuery(options, data.concat(response.data));
   })
   .catch((err) => {
-    throw err;
+    if (err.error && err.options) {
+      const message =
+        'error: ' + err.error.error.message + '. ' +
+        'url: ' + err.options.uri + '. ' +
+        'qs: ' + JSON.stringify(err.options.qs);
+      throw new Error(message);
+    }
+    throw new Error(err);
   });
 };
