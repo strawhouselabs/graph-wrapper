@@ -6,9 +6,6 @@ exports = module.exports = function(token) {
   const campaignsApi = {};
 
   campaignsApi.insights = function(params) {
-    if(!params.fields) {
-       params.fields = 'spend';
-    }
     return api.query(
       { access_token: token,
         path: params.campaign + '/insights',
