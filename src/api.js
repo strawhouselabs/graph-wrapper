@@ -78,14 +78,4 @@ exports.paginatedQuery = (options, currentData) => {
     options.full_uri = response.paging.next;
     return exports.paginatedQuery(options, data.concat(response.data));
   })
-  .catch((err) => {
-    if (err.error && err.options) {
-      const message =
-        'error: ' + err.error.error.message + '. ' +
-        'url: ' + err.options.uri + '. ' +
-        'qs: ' + JSON.stringify(err.options.qs);
-      throw new Error(message);
-    }
-    throw new Error(err);
-  });
 };
