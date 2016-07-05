@@ -36,7 +36,9 @@ exports.query = function(options) {
   if (!options.params) {
     params = {};
   }
-
+  if(params.limit) {
+    qs.limit = params.limit;
+  }
   // set fields from options.params.fields if set
   if (params.fields) {
     qs.fields = params.fields;
