@@ -1,7 +1,7 @@
 "use strict";
 const rp = require('request-promise');
 
-const API_VERSION = 'v2.5';
+const API_VERSION = 'v2.6';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
 /**
@@ -80,8 +80,4 @@ exports.paginatedQuery = (options, currentData) => {
     options.full_uri = response.paging.next;
     return exports.paginatedQuery(options, data.concat(response.data));
   })
-  .catch((err) => {
-    console.log(err);
-    return null;
-  });
 };
