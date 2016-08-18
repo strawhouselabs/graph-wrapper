@@ -8,6 +8,7 @@ var FB = function(options){
   api.ads = require('./src/ads')(options);
   api.creatives = require('./src/creatives')(options);
   api.campaigns = require('./src/campaigns')(options);
+  api.adSets = require('./src/ad_sets')(options);
 
   return api;
 };
