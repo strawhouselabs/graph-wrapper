@@ -6,7 +6,6 @@ exports = module.exports = function(token) {
   const accountsApi = {};
 
   accountsApi.insights = function(params) {
-    params.fields = 'spend';
     return api.query(
       { access_token: token,
         path: params.account + '/insights',
