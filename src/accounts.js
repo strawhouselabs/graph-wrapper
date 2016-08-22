@@ -6,7 +6,7 @@ exports = module.exports = function(token) {
   const accountsApi = {};
 
   accountsApi.insights = function(params) {
-    return api.query(
+    return api.paginatedQuery(
       { access_token: token,
         path: params.account + '/insights',
         params: params}
