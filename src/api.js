@@ -1,7 +1,7 @@
 "use strict";
 const rp = require('request-promise');
 
-const API_VERSION = 'v2.6';
+const API_VERSION = 'v2.7';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
 /**
