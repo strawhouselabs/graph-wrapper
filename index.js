@@ -2,15 +2,15 @@
 const config = require('./src/api').config
 const rp = require('request-promise');
 
-var FB = function(options){
+var FB = function(token){
   var api = {};
 
-  api.accounts = require('./src/accounts')(options);
-  api.user = require('./src/user')(options);
-  api.ads = require('./src/ads')(options);
-  api.creatives = require('./src/creatives')(options);
-  api.campaigns = require('./src/campaigns')(options);
-  api.adSets = require('./src/ad_sets')(options);
+  api.accounts = require('./src/accounts')(token);
+  api.user = require('./src/user')(token);
+  api.ads = require('./src/ads')(token);
+  api.creatives = require('./src/creatives')(token);
+  api.campaigns = require('./src/campaigns')(token);
+  api.adSets = require('./src/ad_sets')(token);
   
   // sets some defults, and by specificing 'path' allows you to use the right api version
   api.raw = function(newOptions) {
@@ -22,10 +22,10 @@ var FB = function(options){
       delete options.path;
     }
     if(options.body){
-      options.body = Object.assign({}, options.body, {access_token: options})
+      options.body = Object.assign({}, options.body, {access_token: token})
     }
     if(options.qs) {
-      options.qs = Object.assign({}, options.qs, {access_token: options})
+      options.qs = Object.assign({}, options.qs, {access_token: token})
     }
     return rp(options);
   }
