@@ -1,5 +1,6 @@
 "use strict";
 const config = require('./src/api').config
+const rp = require('request-promise');
 
 var FB = function(options){
   var api = {};
@@ -20,6 +21,13 @@ var FB = function(options){
       options.uri = config.BASE_URL + options.path;
       delete options.path;
     }
+    if(options.body){
+      options.body = Object.assign({}, options.body, {access_token: options})
+    }
+    if(options.qs) {
+      options.qs = Object.assign({}, options.qs, {access_token: options})
+    }
+    return rp(options);
   }
   return api;
 };
