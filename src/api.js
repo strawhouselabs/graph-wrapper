@@ -4,6 +4,10 @@ const rp = require('request-promise');
 const API_VERSION = 'v2.7';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
+exports.config {
+ API_VERSION,
+ BASE_URL,
+}
 /**
  options can contain params, fields, and must contain path and access_token
  */
