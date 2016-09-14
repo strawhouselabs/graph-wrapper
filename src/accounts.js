@@ -20,5 +20,13 @@ exports = module.exports = function(token) {
       }
     );
   };
+  campaignsApi.one = function(accountId, params) {
+    return api.query(
+      { params,
+        access_token: token,
+        path: accountId,
+      }
+    );
+  };
   return accountsApi;
 };
