@@ -4,7 +4,7 @@ const rp = require('request-promise');
 const API_VERSION = 'v2.7';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
-exports.config {
+exports.config = {
  BASE_URL,
 }
 /**
