@@ -5,7 +5,6 @@ const API_VERSION = 'v2.7';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
 exports.config {
- API_VERSION,
  BASE_URL,
 }
 /**
