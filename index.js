@@ -1,4 +1,5 @@
 "use strict";
+const config = require('./src/api').config
 
 var FB = function(options){
   var api = {};
@@ -9,7 +10,17 @@ var FB = function(options){
   api.creatives = require('./src/creatives')(options);
   api.campaigns = require('./src/campaigns')(options);
   api.adSets = require('./src/ad_sets')(options);
-
+  
+  // sets some defults, and by specificing 'path' allows you to use the right api version
+  api.raw = function(newOptions) {
+    const options = Object.assign({},{
+      json: true,
+    }, newOptions);
+    if(options.path) {
+      options.uri = config.BASE_URL + options.path;
+      delete options.path;
+    }
+  }
   return api;
 };
 
