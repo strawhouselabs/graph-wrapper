@@ -20,7 +20,7 @@ exports = module.exports = function(token) {
       }
     );
   };
-  campaignsApi.one = function(accountId, params) {
+  accountsApi.one = function(accountId, params) {
     return api.query(
       { params,
         access_token: token,
