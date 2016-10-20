@@ -28,7 +28,6 @@ exports.query = function(options) {
   }
   // make sure we were given a token
   if (!options.access_token) {
-    console.log(options.path);
     throw new Error('You must specify an access token in the options to use the api');
   } else {
     qs.access_token = options.access_token;
