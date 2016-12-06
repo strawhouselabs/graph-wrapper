@@ -15,7 +15,7 @@ exports = module.exports = function(token) {
   accountsApi.all = function(params) {
     return api.paginatedQuery(
       { access_token: token,
-        path: 'me/adaccounts',
+        path: `${params.business_manager_id || 'me'}/adaccounts`,
         params: params,
       }
     );
