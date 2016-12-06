@@ -24,6 +24,9 @@ var FB = function(token){
     if(options.body){
       options.body = Object.assign({}, options.body, {access_token: token})
     }
+    if(options.form){
+      options.form = Object.assign({}, options.form, {access_token: token})
+    }
     if(options.qs) {
       options.qs = Object.assign({}, options.qs, {access_token: token})
     }
