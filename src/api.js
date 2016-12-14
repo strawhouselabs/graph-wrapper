@@ -1,12 +1,14 @@
 "use strict";
+const Promise = require('bluebird');
 const rp = require('request-promise');
 
 const API_VERSION = 'v2.7';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
 exports.config = {
- BASE_URL,
-}
+  BASE_URL,
+};
+
 /**
  options can contain params, fields, and must contain path and access_token
  */
@@ -24,11 +26,11 @@ exports.query = function(options) {
 
   // make sure we were given a path
   if (!options.path) {
-    throw new Error('You must defined a query path to use the api');
+    return Promise.reject(new Error('You must defined a query path to use the api'));
   }
   // make sure we were given a token
   if (!options.access_token) {
-    throw new Error('You must specify an access token in the options to use the api');
+    return Promise.reject(new Error('You must specify an access token in the options to use the api'));
   } else {
     qs.access_token = options.access_token;
   }
