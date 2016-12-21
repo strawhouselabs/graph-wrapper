@@ -50,6 +50,7 @@ exports.query = function(options) {
   if (params.fields) {
     qs.fields = params.fields;
   }
+  if (params.filtering) qs.filtering = params.filtering;
 
   if (params.resolution) {
     // set resolution
