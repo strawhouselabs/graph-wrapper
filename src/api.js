@@ -61,6 +61,7 @@ exports.query = function(options) {
     }
     // date start and date endinstal
   }
+  if (params.breakdowns) qs.breakdowns = params.breakdowns;
   if (params.date_start && params.date_end) {
     qs.time_range = {};
     qs.time_range.until = params.date_end;
