@@ -2,7 +2,7 @@
 const Promise = require('bluebird');
 const rp = require('request-promise');
 
-const API_VERSION = 'v2.8';
+const API_VERSION = 'v2.9';
 const BASE_URL = 'https://graph.facebook.com/' + API_VERSION + '/';
 
 exports.config = {
