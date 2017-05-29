@@ -43,8 +43,11 @@ exports.query = function(options) {
   if(params.limit) {
     qs.limit = params.limit;
   }
-   if(params.level) {
+  if(params.level) {
     qs.level = params.level;
+  }
+  if(params.action_attribution_windows){
+    qs.action_attribution_windows = params.action_attribution_windows;
   }
   // set fields from options.params.fields if set
   if (params.fields) {
