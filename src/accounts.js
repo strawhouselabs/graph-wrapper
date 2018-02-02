@@ -5,7 +5,7 @@ const Promise = require('bluebird');
 const api = require('./api');
 
 function getPath(bmId) {
-  if (!bmId) return 'ma/adaccounts';
+  if (!bmId) return 'me/adaccounts';
   return `${bmId}/owned_ad_accounts`;
 }
 
