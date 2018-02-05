@@ -1,13 +1,7 @@
 'use strict';
 
-const { flatten } = require('lodash');
 const Promise = require('bluebird');
 const api = require('./api');
-
-function getPath(bmId) {
-  if (!bmId) return 'me/adaccounts';
-  return `${bmId}/owned_ad_accounts`;
-}
 
 exports = module.exports = function(token) {
   const accountsApi = {};
@@ -23,7 +17,7 @@ exports = module.exports = function(token) {
     const path = getPath(params.business_manager_id);
     return api.paginatedQuery({
       access_token: token,
-      path,
+      path: 'me/adaccounts',
       params,
     });
   };
