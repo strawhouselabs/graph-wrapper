@@ -14,7 +14,6 @@ exports = module.exports = function(token) {
     });
   };
   accountsApi.all = function(params) {
-    const path = getPath(params.business_manager_id);
     return api.paginatedQuery({
       access_token: token,
       path: 'me/adaccounts',
